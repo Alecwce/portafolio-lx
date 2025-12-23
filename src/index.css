@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #8B5CF6;
+  --color-bg-light: #F8F8F8;
+  --color-bg-dark: #050505;
+  --color-text-light: #1A1A1A;
+  --color-text-dark: #EDEDED;
+
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Syne", sans-serif;
+  --font-mono: "JetBrains+Mono", monospace;
+
+  --animate-spin-slow: spin 12s linear infinite;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply antialiased bg-bg-light text-text-light overflow-x-hidden;
+  }
+  
+  /* Dark mode styles */
+  html.dark body {
+    @apply bg-bg-dark text-text-dark;
+  }
+  
+  /* View Transitions API support */
+  @supports (view-transition-name: none) {
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in-out;
+    }
+    
+    /* Animación circular desde el punto del click */
+    ::view-transition-old(root) {
+      clip-path: circle(0px at var(--x, 50%) var(--y, 50%));
+      animation: circle-expand 0.5s ease-in-out;
+    }
+    
+    ::view-transition-new(root) {
+      clip-path: circle(var(--radius, 100%) at var(--x, 50%) var(--y, 50%));
+      animation: circle-expand 0.5s ease-in-out reverse;
+    }
+    
+    @keyframes circle-expand {
+      from {
+        clip-path: circle(0px at var(--x, 50%) var(--y, 50%));
+      }
+      to {
+        clip-path: circle(var(--radius, 100%) at var(--x, 50%) var(--y, 50%));
+      }
+    }
+  }
+}
+
+@layer components {
+  .text-outline {
+    -webkit-text-stroke: 1px currentColor;
+    color: transparent;
+  }
+}
+
+::selection {
+  background-color: #8B5CF6;
+  color: white;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
