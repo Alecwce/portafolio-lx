@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import ContactForm from './ContactForm';
+import EmailContact from './EmailContact';
 
 interface FooterProps {
   time: string;
@@ -24,9 +24,9 @@ const Footer: React.FC<FooterProps> = ({ time }) => {
           TRABAJEMOS <span className="text-primary italic">JUNTOS</span>
         </motion.h2>
 
-        <ContactForm />
+        <EmailContact />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 text-left max-w-4xl mx-auto pt-20 border-t border-gray-200 mt-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 text-left max-w-4xl mx-auto pt-20 border-t border-gray-200 dark:border-zinc-800 mt-32">
           <div className="space-y-8">
             <h4 className="font-mono text-[10px] tracking-[0.4em] uppercase text-gray-400">Redes sociales</h4>
             <div className="flex flex-col gap-4">
@@ -57,7 +57,7 @@ const Footer: React.FC<FooterProps> = ({ time }) => {
           </div>
         </div>
 
-        <div className="mt-40 flex flex-col md:flex-row justify-between items-center text-[10px] font-mono tracking-[0.3em] uppercase text-gray-400 border-t border-gray-100 pt-10">
+        <div className="mt-40 flex flex-col md:flex-row justify-between items-center text-[10px] font-mono tracking-[0.3em] uppercase text-gray-400 border-t border-gray-100 dark:border-zinc-800 pt-10">
           <p>© 2025 ALEXWCE</p>
           <p>DISEÑADO Y DESARROLLADO CON ❤️ POR ALEXWCE</p>
         </div>
