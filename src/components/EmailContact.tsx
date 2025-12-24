@@ -118,51 +118,6 @@ const EmailContact: React.FC = () => {
               </>
             )}
           </motion.button>
-
-          {/* Subtle hint */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.6 }}
-            className="text-center mt-8 text-sm text-gray-500 dark:text-gray-400 font-light"
-          >
-            Respondo en menos de 24 horas ⚡
-          </motion.p>
-        </div>
-      </motion.div>
-
-      {/* Additional Contact Methods - Optional */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.5 }}
-        className="mt-12 text-center"
-      >
-        <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-          O también puedes encontrarme en:
-        </p>
-        <div className="flex justify-center gap-4">
-          {[
-            { platform: 'LinkedIn', icon: '💼' },
-            { platform: 'GitHub', icon: '💻' },
-            { platform: 'Twitter', icon: '🐦' }
-          ].map((social, index) => (
-            <motion.a
-              key={social.platform}
-              href="#"
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.6 + index * 0.1 }}
-              whileHover={{ y: -4 }}
-              className="px-6 py-3 bg-white dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 rounded-full text-sm font-medium hover:border-primary transition-colors"
-            >
-              <span className="mr-2">{social.icon}</span>
-              {social.platform}
-            </motion.a>
-          ))}
         </div>
       </motion.div>
     </div>
