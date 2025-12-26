@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
   const frontZIndex = useTransform(scrollYProgress, [0, 0.4], [10, 50]);
 
   return (
-    <section ref={sectionRef} className="relative min-h-[150vh] pt-40 pb-20 px-6 md:px-12 overflow-x-visible overflow-y-hidden flex flex-col justify-center">
+    <section ref={sectionRef} className="relative min-h-[150vh] pt-40 pb-20 px-6 md:px-12 overflow-x-hidden overflow-y-hidden flex flex-col justify-center">
       <div className="max-w-[1600px] mx-auto w-full relative">
         {/* Rotated Profile Image Container - Background */}
         <motion.div 
@@ -60,7 +60,7 @@ const Hero: React.FC = () => {
               animate={{ scale: [1, 1.01, 1] }}
               transition={{ duration: 4, ease: "easeInOut", repeat: Infinity }}
             >
-              DESARROLLADOR
+              <span className="dark:text-text-dark">DESARR</span><span className="dark:text-gray-500">OLLADOR</span>
             </motion.span>
             
             {/* Contenedor para FRONT y END con línea */}

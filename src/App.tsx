@@ -24,20 +24,24 @@ const App: React.FC = () => {
       <Navbar />
       <main>
         <Hero />
-        <Marquee 
-          items={['ReactJS', 'TypeScript', 'NextJS', 'Tailwind', 'ThreeJS', 'WebGL']} 
-          variant="primary"
-          rotate={-1}
-        />
+        <div className="overflow-hidden">
+          <Marquee 
+            items={['ReactJS', 'TypeScript', 'NextJS', 'Tailwind', 'ThreeJS', 'WebGL']} 
+            variant="primary"
+            rotate={-1}
+          />
+        </div>
         
         <Suspense fallback={<div className="h-96 flex items-center justify-center font-mono text-gray-400">Loading Section...</div>}>
           <About />
           <Portfolio />
-          <Marquee 
-            items={['LET\'S TALK', 'LET\'S COLLABORATE', 'SAY HELLO', 'WANNA BE STARTING SOMETHING']} 
-            variant="dark"
-            rotate={0}
-          />
+          <div className="overflow-hidden">
+            <Marquee 
+              items={['HABLEMOS', 'COLABOREMOS', 'DI HOLA', 'EMPECEMOS ALGO']} 
+              variant="dark"
+              rotate={0}
+            />
+          </div>
           <Footer time={time} />
         </Suspense>
       </main>

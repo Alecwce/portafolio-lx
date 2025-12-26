@@ -17,7 +17,7 @@ const Portfolio: React.FC = () => {
           >
             PROYECTOS <br/> <span className="text-primary italic">DESTACADOS</span>
           </motion.h2>
-          <span className="font-mono text-sm text-gray-400 tracking-widest">( 2021 — 2024 )</span>
+          <span className="font-mono text-sm text-gray-400 tracking-widest">( 2023 — 2025 )</span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

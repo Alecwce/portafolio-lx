@@ -1,20 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Copy, CheckCircle2 } from 'lucide-react';
+import { Mail } from 'lucide-react';
 
 const EmailContact: React.FC = () => {
-  const [copied, setCopied] = useState(false);
   const email = "iialex221@gmail.com";
-
-  const handleCopy = async () => {
-    try {
-      await navigator.clipboard.writeText(email);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
-      console.error('Failed to copy:', err);
-    }
-  };
 
   return (
     <div className="w-full max-w-5xl mx-auto mt-20">
@@ -85,7 +74,6 @@ const EmailContact: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="mb-10"
           >
             <motion.a
               href={`mailto:${email}`}
@@ -98,26 +86,6 @@ const EmailContact: React.FC = () => {
               </span>
             </motion.a>
           </motion.div>
-
-          {/* Copy Button */}
-          <motion.button
-            onClick={handleCopy}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="mx-auto flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 text-white rounded-full font-bold uppercase tracking-widest text-sm shadow-lg shadow-primary/25 transition-all duration-300"
-          >
-            {copied ? (
-              <>
-                <CheckCircle2 size={20} />
-                ¡Copiado!
-              </>
-            ) : (
-              <>
-                <Copy size={20} />
-                Copiar email
-              </>
-            )}
-          </motion.button>
         </div>
       </motion.div>
     </div>
